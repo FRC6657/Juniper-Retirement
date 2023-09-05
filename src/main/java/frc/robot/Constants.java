@@ -3,10 +3,27 @@ package frc.robot;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 public class Constants {
+
+    public static class CAN {
+            
+        public static final int kFrontLeft = 1;
+        public static final int kFrontRight = 2;
+        public static final int kBackRight = 3;
+        public static final int kBackLeft = 4;
+        public static final int kPivot = 5;
+        public static final int kPigeon = 6;
+        public static final int kPCM = 7;
+        public static final int kLeftClaw = 8;
+        public static final int kRightClaw = 9;
+        public static final int kArm = 13;
+
+    }
+
+    
     public static class PivotConstants {
         
         public static final double kThroughboreOffset = 0.7748;
-        
+
         public static enum SETPOINTS {
 
         INTAKE(-15), 

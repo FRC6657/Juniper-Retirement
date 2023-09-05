@@ -41,8 +41,8 @@ public class Arm extends SubsystemBase {
 
   public Arm() {
 
-    pivotMotor = new WPI_TalonFX(5);
-    winchMotor = new WPI_TalonSRX(13);
+    pivotMotor = new WPI_TalonFX(Constants.CAN.kPivot);
+    winchMotor = new WPI_TalonSRX(Constants.CAN.kArm);
     pivotRatchet = new DoubleSolenoid(7, PneumaticsModuleType.REVPH, 6, 7);
     pivotEncoder = new DutyCycleEncoder(9);
     pivotPID = new PIDController(2.5 / 3, 0, 0);

@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 import frc.robot.Constants.INTAKE.INTAKE_STATES;
 
 public class Intake extends SubsystemBase {
@@ -23,8 +24,8 @@ public class Intake extends SubsystemBase {
   private INTAKE_STATES intakeState = INTAKE_STATES.IDLE;
 
   public Intake() {
-    intakeMotor1 = new WPI_TalonSRX(8);
-    intakeMotor2 = new WPI_TalonSRX(9);
+    intakeMotor1 = new WPI_TalonSRX(Constants.CAN.kRightClaw);
+    intakeMotor2 = new WPI_TalonSRX(Constants.CAN.kLeftClaw);
     intakeMotor1.setInverted(false);
     
     intakeMotor2.follow(intakeMotor1);

@@ -12,6 +12,7 @@ import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Drivetrain extends SubsystemBase {
   
@@ -25,12 +26,12 @@ public class Drivetrain extends SubsystemBase {
   private final MecanumDrive drive;
 
   public Drivetrain() {
-    frontLeft = new WPI_TalonSRX(1);
-    frontRight = new WPI_TalonSRX(2);
-    backLeft = new WPI_TalonSRX(3);
-    backRight = new WPI_TalonSRX(4);
+    frontLeft = new WPI_TalonSRX(Constants.CAN.kFrontLeft);
+    frontRight = new WPI_TalonSRX(Constants.CAN.kFrontRight);
+    backLeft = new WPI_TalonSRX(Constants.CAN.kBackLeft);
+    backRight = new WPI_TalonSRX(Constants.CAN.kBackRight);
 
-    gyro = new WPI_PigeonIMU(6);
+    gyro = new WPI_PigeonIMU(Constants.CAN.kPigeon);
 
     drive = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
 
